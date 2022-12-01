@@ -1,0 +1,30 @@
+
+One food per line, followed by ingredients, and all or some allergens it
+contains
+
+Each allergen is found in exactly one ingredient
+
+Each ingredient contains zero or one allergen
+
+Allergens are not always marked for a given food
+
+If an allergen is listed, the corresponding ingredient is somewhere in the
+food list
+
+TODO find ingredients which cannot contain any of the allergens
+
+For each food
+For each allergen, one of the ingredients contains it
+
+For each ingredients, we can check if it can't match one of the allergen on the
+same line : for each allergen, if there is another line with only this
+allergen somewhere else, then the ingredient must be on this line too : if
+not, it means the ingredient doesnt't contain the allergen
+
+Needed data structures :
+
+- List with tuples containing ingredient list and set of allergen list
+- Hash with allergen as key (when this allergen is alone on its line) and a set of the corresponding ingredients as value
+- Counter of each ingredient in the menu
+- Hash of ingrediens with their possible allergens
+
